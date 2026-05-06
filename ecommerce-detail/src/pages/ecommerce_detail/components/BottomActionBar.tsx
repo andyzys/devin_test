@@ -23,7 +23,7 @@ const BottomActionBar: React.FC<BottomActionBarProps> = ({
 }) => {
   const [sharePanelVisible, setSharePanelVisible] = useState(false);
 
-  const { runAsync: doToggleFavorite, loading: favLoading } = useRequest(toggleFavorite, { manual: true });
+  const { runAsync: doToggleFavorite } = useRequest(toggleFavorite, { manual: true });
   const { runAsync: doAddToCart, loading: cartLoading } = useRequest(addToCart, { manual: true });
   const { runAsync: doBuyNow, loading: buyLoading } = useRequest(buyNow, { manual: true });
 
@@ -107,7 +107,7 @@ const BottomActionBar: React.FC<BottomActionBarProps> = ({
           <Button
             className="btn-cart"
             loading={cartLoading}
-            disabled={isOutOfStock || favLoading}
+            disabled={isOutOfStock}
             onClick={handleAddToCart}
           >
             加入购物车
