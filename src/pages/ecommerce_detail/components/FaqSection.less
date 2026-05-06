@@ -1,0 +1,94 @@
+.faq-section {
+  background: #fff;
+  padding: 16px;
+  margin-top: 8px;
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-1, #1d2129);
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 3px solid var(--color-primary-6, #165dff);
+  }
+
+  .faq-list {
+    .faq-item {
+      border: 1px solid var(--color-border-1, #f2f3f5);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+
+      &.expanded {
+        border-color: var(--color-primary-2, #bedaff);
+      }
+
+      .faq-question {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+          background: var(--color-fill-1, #f7f8fa);
+        }
+
+        .faq-q-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: var(--color-primary-6, #165dff);
+          color: #fff;
+          font-size: 12px;
+          font-weight: 600;
+          flex-shrink: 0;
+        }
+
+        .faq-q-text {
+          flex: 1;
+          font-size: 14px;
+          color: var(--color-text-1, #1d2129);
+          font-weight: 500;
+        }
+      }
+
+      .faq-answer {
+        display: flex;
+        gap: 10px;
+        padding: 0 16px 12px;
+        animation: fadeIn 0.2s ease;
+
+        .faq-a-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: #00b42a;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 600;
+          flex-shrink: 0;
+        }
+
+        .faq-a-text {
+          font-size: 13px;
+          color: var(--color-text-2, #4e5969);
+          line-height: 1.6;
+          padding-top: 2px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
